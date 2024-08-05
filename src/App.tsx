@@ -156,6 +156,7 @@ const App = () => {
     });
   };
 
+  // Here I am making mutation of saving invoice but as url is not working on it  and it won't save any data
   const [saveInvoice] = useMutation(SAVE_INVOICE, {
     onCompleted: () => {
       console.log("onCompleted");
@@ -169,7 +170,6 @@ const App = () => {
     e.preventDefault();
 
     if (validate()) {
-      console.log("Form data:", formData);
       saveInvoice({ variables: { input: formData } });
     }
   };
